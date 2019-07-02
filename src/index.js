@@ -24,11 +24,25 @@ function showBeer(e) {
         beerDetailDiv.innerHTML = `<h1>${beer.name}</h1>
         <img src="${beer.image_url}">
         <h3>${beer.tagline}</h3>
+        <br>
+        <p><span class="badge badge-info">Brewer's Tip </span> ${beer.brewers_tips}</p>
+        <h3>Food Pairing</h3>
+        <ul id="food-pairing"></ul>
         <textarea>${beer.description}</textarea>
         <button id="edit-beer" class="btn btn-info">
         Save
         </button>`
-        beerDetailDiv.addEventListener("click", e => {
+
+        const foodList = document.querySelector("#food-pairing")
+        beer.food_pairing.forEach(food =>
+            foodList.innerHTML += `
+            <li>
+            ${food}
+            </li>`
+        )
+
+        const editBtn = document.querySelector("#edit-beer")
+        editBtn.addEventListener("click", e => {
             const newDescription = document.querySelector("textarea").value
             fetch(`${BEERS_URL}/${beer.id}`, {
                 method: "PATCH",
