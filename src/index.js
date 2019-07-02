@@ -54,9 +54,8 @@ function getSingleBeer(beerId){
 	})
 }
 
-function saveBeerChanges(e)
+function saveBeerChanges(e){
 	fetch(`${BASE_URL}/${e.target.previousElementSibling.innerText}`, {
-		console.log(e.target.dataset.id)
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json',
