@@ -36,20 +36,12 @@ beerNameContainer.addEventListener('click', e => {
     fetch(oneBeerUrl+beerId)
     .then(r => r.json())
     .then(beerObj =>{
+      renderMoreInfo(beerObj)
       // console.log(beerObj)
-      beerDiv.innerHTML = ''
-      beerDiv.innerHTML += `
-      <h1>${beerObj.name}</h1>
-        <img src=${beerObj.image_url}>
-        <h3>${beerObj.tagline}</h3>
-        <textarea id='text'>${beerObj.description}</textarea>
-        <button data-id="${beerObj.id}" id="edit-beer" class="btn btn-info">
-        Save
-        </button>
-       `
     })// end of fetch
 
   }// end of if
+
 
 })// end of beerNameContainer listener
 
@@ -58,11 +50,11 @@ beerDiv.addEventListener('click', e => {
   // console.log(e.target.dataset.id)
   let description = document.getElementById('text').value
   const selectedBeerId = e.target.dataset.id
-  console.log(selectedBeerId)
+  // console.log(selectedBeerId)
 
   if(e.target.id === 'edit-beer'){
-    console.log('udpate beer')
-    console.log(description)
+    // console.log('udpate beer')
+    // console.log(description)
 
     fetch(oneBeerUrl+selectedBeerId, {
       method:'PATCH',
@@ -80,15 +72,11 @@ beerDiv.addEventListener('click', e => {
       //
       // })
 
-
-
-
   }// end of if
 
 
 
 })// end of BeerDiv listener
-
 
 
 ///render func ///
@@ -99,6 +87,18 @@ function renderOneBeer(beer){
 
 } // end of renderOnerBeer
 
+function renderMoreInfo(beerObj){
+  beerDiv.innerHTML = ''
+  beerDiv.innerHTML += `
+  <h1>${beerObj.name}</h1>
+  <img src=${beerObj.image_url}>
+  <h3>${beerObj.tagline}</h3>
+  <textarea id='text'>${beerObj.description}</textarea>
+  <button data-id="${beerObj.id}" id="edit-beer" class="btn btn-info">
+  Save
+  </button>
+  `
+}/// end of renderMoreInfo
 
 ///invoke///
 fetchBeers(beersUrl)
