@@ -1,18 +1,17 @@
 const BEERS_URL = "http://localhost:3000/beers"
 const beerList = document.querySelector("#list-group")
 
-function getBeers() {
+function getBeers(beerList) {
     fetch(BEERS_URL)
     .then(resp => resp.json())
     .then(beers => {
-        const beerList = document.querySelector("#list-group")
         beers.forEach(beer => {
             beerList.innerHTML += `<li class="list-group-item" data-id="${beer.id}">${beer.name}</li>`
         })
     })
 }
 
-document.addEventListener("DOMContentLoaded", getBeers)
+document.addEventListener("DOMContentLoaded", () => getBeers(beerList))
 
 beerList.addEventListener("click", showBeer)
 
@@ -30,7 +29,7 @@ function showBeer(e) {
         Save
         </button>`
         beerDetailDiv.addEventListener("click", e => {
-            const newDescription = e.target.parentNode.querySelector("textarea").value
+            const newDescription = document.querySelector("textarea").value
             fetch(`${BEERS_URL}/${beer.id}`, {
                 method: "PATCH",
                 headers: {
