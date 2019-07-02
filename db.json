@@ -2,7 +2,7 @@
   "beers": [
     {
       "id": 1,
-      "name": "Buzz",
+      "name": "Kevin",
       "tagline": "A Real Bitter Experience.",
       "first_brewed": "09/2007",
       "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
@@ -17,7 +17,7 @@
     },
     {
       "id": 3,
-      "name": "Berliner Weisse With Yuzu - B-Sides",
+      "name": "Kevin",
       "tagline": "Japanese Citrus Berliner Weisse.",
       "first_brewed": "11/2015",
       "description": "Japanese citrus fruit intensifies the sour nature of this German classic.",
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "name": "Pilsen Lager",
+      "name": "Kevin",
       "tagline": "Unleash the Yeast Series.",
       "first_brewed": "09/2013",
       "description": "Our Unleash the Yeast series was an epic experiment into the differences in aroma and flavour provided by switching up your yeast. We brewed up a wort with a light caramel note and some toasty biscuit flavour, and hopped it with Amarillo and Centennial for a citrusy bitterness. Everything else is down to the yeast. Pilsner yeast ferments with no fruity esters or spicy phenols, although it can add a hint of butterscotch.",
@@ -47,7 +47,7 @@
     },
     {
       "id": 5,
-      "name": "Avery Brown Dredge",
+      "name": "Kevin",
       "tagline": "Bloggers' Imperial Pilsner.",
       "first_brewed": "02/2011",
       "description": "wow so good!",
@@ -62,7 +62,7 @@
     },
     {
       "id": 6,
-      "name": "Electric India",
+      "name": "Kevin",
       "tagline": "Vibrant Hoppy Saison.",
       "first_brewed": "05/2013",
       "description": "wow so good!",
@@ -77,7 +77,7 @@
     },
     {
       "id": 7,
-      "name": "AB:12",
+      "name": "Kevin",
       "tagline": "Imperial Black Belgian Ale.",
       "first_brewed": "07/2012",
       "description": "An Imperial Black Belgian Ale aged in old Invergordon Scotch whisky barrels with mountains of raspberries, tayberries and blackberries in each cask. Decadent but light and dry, this beer would make a fantastic base for ageing on pretty much any dark fruit - we used raspberries, tayberries and blackberries beause they were local.",
@@ -92,7 +92,7 @@
     },
     {
       "id": 8,
-      "name": "AB:07",
+      "name": "Kevin",
       "tagline": "Whisky Cask-Aged Scotch Ale.",
       "first_brewed": "03/2010",
       "description": "Whisky cask-aged imperial scotch ale. Beer perfect for when the rain is coming sideways. Liquorice, plum and raisin temper the warming alcohol, producing a beer capable of holding back the Scottish chill.",
@@ -107,7 +107,7 @@
     },
     {
       "id": 9,
-      "name": "Bramling X",
+      "name": "Kevin",
       "tagline": "Single Hop IPA Series - 2011.",
       "first_brewed": "01/2011",
       "description": "Good old Bramling Cross is elegant, refined, assured, (boring) and understated. Understated that is unless you hop the living daylights out of a beer with it. This is Bramling Cross re-invented and re-imagined, and shows just what can be done with English hops if you use enough of them. Poor Bramling Cross normally gets lost in a woeful stream of conformist brown ales made by sleepy cask ale brewers. But not anymore. This beer shows that British hops do have some soul, and is a fruity riot of blackberries, pears, and plums. Reminds me of the bramble, apple and ginger jam my grandmother used to make.",
