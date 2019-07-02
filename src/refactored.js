@@ -1,3 +1,12 @@
+// Was messing around with this version as a refactored version to do 2 fetch requests
+// 1- fetch all that grabs the names only FOR the li elements
+// 2- a seperate fetch that grab individual elements details. i feel that this would have solved my problem
+// i have over in index.js where my dad won't reflect changes without a reload, since the
+// getting of the API info is done on page load, and the detail container info is string
+// interpolated in.
+
+// ALAS time makes fools of us all, so mostly ignore this script :)
+
 // Global Variables
 const beersUrl = 'http://localhost:3000/beers'
 const beerDetailsContainer = document.querySelector('#beer-detail')
@@ -9,10 +18,10 @@ document.addEventListener('DOMContentLoaded', getBeers())
 // Grab all beers --> JSON
 function getBeers() {
     fetch(beersUrl)
-    .then(r => r.json())
-    .then(beers => 
-        beers.forEach(beer =>
-        renderBeerList(beer)))
+        .then(r => r.json())
+        .then(beers =>
+            beers.forEach(beer =>
+                renderBeerList(beer)))
 }
 
 // Render beer elements
@@ -20,11 +29,18 @@ function renderBeerList(beer) {
     const li = document.createElement('li')
     li.className = 'list-group-item'
     li.innerText = beer.name
-    li.addEventListener('click', function(e) {
+    li.addEventListener('click', function (e) {
         renderBeerDetails(beer)
     })
     beersListContainer.appendChild(li)
 }
+// this isnt done but YOU READ MY README >:O (at the top)
+function getBeerDetails(id) {
+        fetch(`${beersUrl}/${id}`)
+            .then(r => r.json())
+            .then(beer => renderBeerDetails(beer))
+    }
+
 // Render beer deetz element
 function renderBeerDetails(beer) {
     beerDetailsContainer.innerHTML = `
@@ -57,17 +73,18 @@ function renderBeerDetails(beer) {
     // -----------------------------------------------------
 }
 // Event listener looking for some click action ~*~*~*~*~*~*~*~
-beerDetailsContainer.addEventListener('click', function(e) {
-    if(e.target.id === 'edit-beer') {
+beerDetailsContainer.addEventListener('click', function (e) {
+    if (e.target.id === 'edit-beer') {
         debugger
         const newDescription = beerDetailsContainer.querySelector('textarea').value
         const id = beerDetailsContainer.querySelector('textarea').dataset.id
         editBeerDescription(id, newDescription)
         // Want to make the DOM show the updated description (need to force another Fetch)
         beerDescription = newDescription
-        // updateBeer()
+        updateBeer()
+        // beer.description = newDescription
         // Cheap cop-out way to DOM to immediately show changes without refresh ;(
-        location.reload()
+        // location.reload()
     }
 })
 
@@ -83,12 +100,6 @@ function editBeerDescription(id, newDescription) {
             description: newDescription
         })
     })
-    .then(r => r.json())
-    .then(editedBeer => renderBeerDetails(editedBeer))
-}
-// Super-Experimental Beer Force-Update method
-function updateBeer(id) {
-    fetch(`${beersUrl}/${id}`)
-    .then(r => r.json())
-    .then(beer => renderBeerDetails(beer))
+        .then(r => r.json())
+        .then(editedBeer => renderBeerDetails(editedBeer))
 }
