@@ -80,6 +80,7 @@ beerDiv.addEventListener('click', e => {
 
 
 ///render func ///
+
 function renderOneBeer(beer){
   beerNameContainer.innerHTML +=`
   <li data-id='${beer.id}' class="list-group-item">${beer.name}</li>
