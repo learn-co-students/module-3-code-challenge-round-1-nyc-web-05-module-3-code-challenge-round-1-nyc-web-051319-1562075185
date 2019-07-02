@@ -4,7 +4,6 @@ const beerListContainer = document.querySelector("#list-group")
 const listContainer = document.querySelector(".col-md-4")
 const beerDetailContainer = document.querySelector("#beer-detail")
 
-
 document.addEventListener("DOMContentLoaded", startUpSite())
 
 //callback fn called upon page load
@@ -78,7 +77,6 @@ function editBeerDesc(event){
   .then(resp => resp.json())
   .then(updatedBeerObj => beerDesc.innerText = updatedBeerObj.description)
 }
-
 
 // CODE BEFORE REFACTORING:
 // document.addEventListener("DOMContentLoaded", () => {
